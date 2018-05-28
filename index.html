@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Daptcha</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <center>
+    <h1>Daptcha</h1>
+    <p>
+      XO | Twitter @ehxohd | Discord XO#0001 | Github TCWTEAM
+    </p>
+    <h4>For All Issues Please Open An Issue On Github</h4>
+    <br />
+    <form>
+      <input type="button" class="startBtn" value="Initialize" onclick="message();"/>
+      <input type="button" class="settingsBtn" onclick="openSettings();" value="Settings" />
+      <br />
+      <input type="button" class="lnchButton" value="Open Solver" onclick="openSolver();"/>
+    </form>
+    <br />
+    <p>
+      Special Thanks To Kyel | TCWTEAM 2018 | xoBots
+    </p>
+    <h4><a onclick="donate();">Click Here To Buy My Coffee</a></h4>
+  </center>
+</body>
+<script>
+  require('./main.js')
+  require('./app.js')
+</script>
+<script src="main.js"></script>
+<script src="app.js"></script>
+<script>
+var opn = require('opn')
+  function message() {
+    alert("At the moment the harvesters are seperate from the ui. Please run server.py first then run harvest.py if you want to use 3rd party services to harvest, both as admin. Sorry for this.")
+  }
+
+  function donate() {
+    opn("https://paypal.me/err404")
+  }
+</script>
+</html>

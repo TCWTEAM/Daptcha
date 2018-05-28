@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Daptcha Setting</title>
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+  <center>
+    <h1>Settings</h1>
+    <p id="statusI">
+    </p>
+    <p>
+      2Captcha API Keys (Seperate By Comma)
+    </p>
+    <textarea id="tck">id</textarea>
+    <br />
+    <p>
+      Anti-Captcha API Keys (Seperate By Comma)
+    </p>
+    <textarea id="ack">df</textarea>
+    <br />
+    <p>
+      Death By Captcha Keys (Seperate By Comma)
+    </p>
+    <textarea id="dbc">sf</textarea>
+    <br />
+    <p>
+      Sitekey
+    </p>
+    <input type="text" id="sk" placeholder="Sitekey" />
+    <br />
+    <p>
+      Site Url
+    </p>
+    <input type="text" id="surl" placeholder="Site URL e.x https://google.com" />
+    <br />
+    <br />
+    <input type="submit" onclick="save();" class="saveButton" />
+  </center>
+</body>
+<script src="main.js"></script>
+<script src="app.js"></script>
+<script>require('./app.js')</script>
+<script>
+  var fs = require('fs')
+  var obj = JSON.parse(fs.readFileSync('settings.json', 'utf8'))
+  document.getElementById('tck').value = obj['tcks']
+  document.getElementById('ack').value = obj['acks']
+  document.getElementById('dbc').value = obj['dbks']
+  document.getElementById('sk').value = obj['sitekey']
+  document.getElementById('surl').value = obj['url']
+</script>
+
+</html>
