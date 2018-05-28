@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Daptcha Harvester</title>
+  <style>
+  body {
+    font-family: "courier new";
+    background-color: rgb(50, 51, 51);
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  h1 {
+    color: rgb(21, 232, 48);
+  }
+
+  h2 {
+    color: rgb(255, 115, 0);
+  }
+
+  h4 {
+    color: rgb(211, 0, 255);
+  }
+
+  p {
+    color: rgb(0, 245, 255);
+  }
+
+  .settingsBtn {
+    background-color: #ffed00;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  .startBtn {
+    background-color: aqua;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  .lnchButton {
+    background-color: magenta;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  input[type=submit] {
+    background-color: rgb(28, 252, 0);
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  .endButton {
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  textarea {
+      width: 75%;
+      height: 120px;
+      padding: 12px 20px;
+      box-sizing: border-box;
+      border: 2px solid magenta;
+      color: #ffed00;
+      border-radius: 4px;
+      background-color: #585858;
+      font-size: 16px;
+      resize: none;
+  }
+
+  input[type=text] {
+      width: 40%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 2px solid magenta;
+      border-radius: 4px;
+      background-color: #585858;
+      color: #ffed00;
+  }
+
+  </style>
+</head>
+<body>
+  <center>
+    <h1>Daptcha Manual Harvesting</h1>
+    <h4>Captcha Autoclick Is Implemented</h4>
+    <br />
+    <h2><u>Info</u></h2>
+    <h2>Site: {{ site }}</h2>
+    <h2>Sitekey: {{ sitekey }}</h2>
+    <form action="/add" method="post">
+      <div class="g-recaptcha" data-sitekey="{{ sitekey }}" data-callback="spoof"></div>
+      <script type="text/javascript" src="https://www.google.com/recaptcha/api.js"></script>
+      <p><input type="submit" value="Submit" hidden="hidden" id="submit"/></p>
+
+      <h4>Total Captcha Tokens: {{ count }}</h4>
+
+
+    </form>
+  </center>
+</body>
+<script>
+  function spoof() {
+    document.getElementById("submit").click();
+  }
+
+</script>
+</html>
