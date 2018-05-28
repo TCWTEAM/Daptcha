@@ -31,7 +31,7 @@
 
 
 #### API
-- Url will always be http://daptcha.<siteurl>:5000
+- Url will always be http://daptcha.siteurl:5000
     - /fetch Method: GET [Will return the oldest captcha token]
     - /total Method: GET [Will return the amount of total tokens at the moment]
 
